@@ -11,7 +11,7 @@ export default defineConfig({
       exposes: {
         "./LoginPage": "./src/LoginPage"
       },
-      shared: ["react", "react-dom"]
+      shared: ["react", "react-dom", "react-router-dom"]
     })
   ],
   build: {
