@@ -1,29 +1,27 @@
+// login-app/src/LoginPage.tsx
 import React from "react";
-import './LoginPage.css'
+import { useNavigate } from "react-router-dom";
 
 const LoginPage: React.FC = () => {
+  const navigate = useNavigate();
+
+  const handleLogin = (event: React.FormEvent) => {
+    event.preventDefault();
+    navigate("/"); 
+  };
+
   return (
-    <div style={{
-      border: "2px solid #1e3a8a",
-      padding: "20px",
-      width: "300px",
-      margin: "auto",
-      borderRadius: "8px"
-    }}>
+    <div className="login-container">
       <h2>Tela de Login</h2>
-      <form>
+      <form onSubmit={handleLogin}>
         <div>
           <label>Email:</label>
-          <br />
-          <input type="email" placeholder="Digite seu email" style={{ width: "100%" }} />
+          <input type="email" placeholder="Digite seu email" required />
         </div>
-        <br />
         <div>
           <label>Senha:</label>
-          <br />
-          <input type="password" placeholder="Digite sua senha" style={{ width: "100%" }} />
+          <input type="password" placeholder="Digite sua senha" required />
         </div>
-        <br />
         <button type="submit">Entrar</button>
       </form>
     </div>
